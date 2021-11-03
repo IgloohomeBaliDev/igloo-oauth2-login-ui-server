@@ -17,8 +17,8 @@ const partnerAPI = new PartnerAPIEndpoint();
 const requestListener = (req, res) => {
   const corsRule = corsHandler.init(corsAllowedUrls, corsAllowedHeaders, req);
 
-  // POST - Proxied
-  routingHandler.post("/proxied/oauth2/login", () => {
+  // POST - Proxied to AWS Hosted UI with Puppeteer
+  routingHandler.post("/igloo/oauth2/login", () => {
     partnerAPI.postProxiedLoginEndpoint(req, res, corsRule);
   });
 
